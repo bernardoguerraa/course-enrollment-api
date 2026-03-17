@@ -37,7 +37,7 @@ async function main() {
     ]
   });
 
-  console.log("Banco populado com sucesso 🚀");
+  console.log("Banco populado com sucesso");
 
 }
 
