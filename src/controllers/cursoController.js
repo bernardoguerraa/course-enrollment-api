@@ -1,9 +1,10 @@
+const cursoSchema = require("../validators/cursoValidator");
 const cursoService = require("../services/cursoService");
 
 exports.criarCurso = async (req, res, next) => {
   try {
-    const { titulo } = req.body;
-    const curso = await cursoService.criarCurso({ titulo });
+    const dadosValidados = cursoSchema.parse(req.body);
+    const curso = await cursoService.criarCurso(dadosValidados);
     res.status(201).json(curso);
   } catch (error) {
     next(error);
@@ -32,7 +33,8 @@ exports.buscarCursoPorId = async (req, res, next) => {
 exports.atualizarCurso = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
-    const curso = await cursoService.atualizarCurso(id, req.body);
+    const dadosValidados = cursoSchema.parse(req.body);
+    const curso = await cursoService.atualizarCurso(id, dadosValidados);
     res.json(curso);
   } catch (error) {
     next(error);

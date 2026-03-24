@@ -1,9 +1,10 @@
+const matriculaSchema = require("../validators/matriculaValidator");
 const matriculaService = require("../services/matriculaService");
 
 exports.criarMatricula = async (req, res, next) => {
   try {
-    const { alunoId, cursoId } = req.body;
-    const matricula = await matriculaService.criarMatricula({ alunoId, cursoId });
+    const dadosValidados = matriculaSchema.parse(req.body);
+    const matricula = await matriculaService.criarMatricula(dadosValidados);
     res.status(201).json(matricula);
   } catch (error) {
     next(error);
@@ -19,11 +20,21 @@ exports.listarMatriculas = async (req, res, next) => {
   }
 };
 
-exports.deletarMatricula = async (req, res, next) => {
+exports.cancelarMatricula = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
-    await matriculaService.deletarMatricula(id);
-    res.status(204).send();
+    const matricula = await matriculaService.cancelarMatricula(id);
+    res.json(matricula);
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.concluirMatricula = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id);
+    const matricula = await matriculaService.concluirMatricula(id);
+    res.json(matricula);
   } catch (error) {
     next(error);
   }

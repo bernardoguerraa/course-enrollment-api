@@ -21,12 +21,14 @@ model Curso {
 }
 
 model Matricula {
-  id      Int   @id @default(autoincrement())
+  id      Int    @id @default(autoincrement())
   alunoId Int
   cursoId Int
+  status  String @default("ativa") // <-- NOVO CAMPO ADICIONADO
 
-  aluno   Aluno @relation(fields: [alunoId], references: [id])
-  curso   Curso @relation(fields: [cursoId], references: [id])
+  aluno   Aluno  @relation(fields: [alunoId], references: [id])
+  curso   Curso  @relation(fields: [cursoId], references: [id])
 
-  @@unique([alunoId, cursoId])
+  // Essa linha abaixo garante que o mesmo aluno não tenha duas matrículas no mesmo curso
+  @@unique([alunoId, cursoId]) 
 }
