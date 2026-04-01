@@ -5,7 +5,11 @@
     "version": "1.0.0",
     "description": "Documentação da API do Desafio Backend"
   },
-  "servers": [
+"servers": [
+    {
+      "url": "https://course-enrollment-api-px5r.onrender.com",
+      "description": "Servidor de Produção (Render)"
+    },
     {
       "url": "http://localhost:3000",
       "description": "Servidor Local"
