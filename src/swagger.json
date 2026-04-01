@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Matrículas",
+    "version": "1.0.0",
+    "description": "Documentação da API do Desafio Backend"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor Local"
+    }
+  ],
+  "paths": {
+    "/alunos": {
+      "get": {
+        "summary": "Lista todos os alunos",
+        "tags": ["Alunos"],
+        "responses": {
+          "200": { "description": "Sucesso" }
+        }
+      },
+      "post": {
+        "summary": "Cria um novo aluno",
+        "tags": ["Alunos"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": { "type": "string", "example": "Bernardo Guerra" },
+                  "email": { "type": "string", "example": "bernardo@email.com" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Criado com sucesso" },
+          "400": { "description": "Erro de validação" }
+        }
+      }
+    }
+  }
+}
