@@ -64,21 +64,21 @@ npm run dev
 
 ## 📡 Resumo dos Endpoints
 
-Recurso,Método,Rota,Descrição
-Alunos,POST,/alunos,Cadastra um novo aluno
-,GET,/alunos,Lista todos os alunos
-,GET,/alunos/:id,Busca um aluno específico
-,PUT,/alunos/:id,Atualiza os dados do aluno
-,DELETE,/alunos/:id,Remove um aluno
-Cursos,POST,/cursos,Cadastra um novo curso
-,GET,/cursos,Lista todos os cursos
-,GET,/cursos/:id,Busca um curso específico
-,PUT,/cursos/:id,Atualiza o curso
-,DELETE,/cursos/:id,Remove um curso
-Matrículas,POST,/matriculas,Matricula um aluno
-,GET,/matriculas,Lista matrículas cadastradas
-,PATCH,/matriculas/:id/cancelar,Cancela uma matrícula
-,PATCH,/matriculas/:id/concluir,Conclui uma matrícula
+Recurso	Método	Rota	Descrição
+Alunos	POST	/alunos	Cadastra um novo aluno
+GET	/alunos	Lista todos os alunos
+GET	/alunos/:id	Busca um aluno específico
+PUT	/alunos/:id	Atualiza os dados do aluno
+DELETE	/alunos/:id	Remove um aluno
+Cursos	POST	/cursos	Cadastra um novo curso
+GET	/cursos	Lista todos os cursos
+GET	/cursos/:id	Busca um curso específico
+PUT	/cursos/:id	Atualiza o curso
+DELETE	/cursos/:id	Remove um curso
+Matrículas	POST	/matriculas	Matricula um aluno
+GET	/matriculas	Lista matrículas cadastradas
+PATCH	/matriculas/:id/cancelar	Cancela uma matrícula
+PATCH	/matriculas/:id/concluir	Conclui uma matrícula
 
 ## Configurações de Deploy no Render (Referência)
 
