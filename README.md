@@ -39,7 +39,7 @@ A API está documentada e hospedada publicamente. Você pode testar todas as rot
 * **URL Base da API:** `https://course-enrollment-api-px5r.onrender.com`
 * **Hospedagem:** Render (Web Service)
 
-> **⚠️ Nota para os Avaliadores sobre o Deploy:** > Como a aplicação utiliza SQLite no plano gratuito do Render (que possui discos efêmeros), o banco de dados é reiniciado a cada novo deploy ou inatividade do servidor. Para testar o sistema pelo Swagger na nuvem, comece criando um novo Aluno (`POST /alunos`) e um novo Curso (`POST /cursos`) antes de testar a criação de Matrículas.
+> **⚠️ Nota:** > Como a aplicação utiliza SQLite no plano gratuito do Render (que possui discos efêmeros), o banco de dados é reiniciado a cada novo deploy ou inatividade do servidor. Para testar o sistema pelo Swagger na nuvem, comece criando um novo Aluno (`POST /alunos`) e um novo Curso (`POST /cursos`) antes de testar a criação de Matrículas.
 
 ---
 
@@ -48,7 +48,6 @@ A API está documentada e hospedada publicamente. Você pode testar todas as rot
 **1. Clone o repositório:**
 
 git clone [https://github.com/bernardoguerraa/course-enrollment-api.git]
-cd course-enrollment-api
 
 **2. Instale as dependências:**
 
@@ -64,21 +63,22 @@ npm run dev
 
 ## 📡 Resumo dos Endpoints
 
-Recurso,Método,Rota,Descrição
-Alunos,POST,/alunos,Cadastra um novo aluno
-,GET,/alunos,Lista todos os alunos
-,GET,/alunos/:id,Busca um aluno específico
-,PUT,/alunos/:id,Atualiza os dados do aluno
-,DELETE,/alunos/:id,Remove um aluno
-Cursos,POST,/cursos,Cadastra um novo curso
-,GET,/cursos,Lista todos os cursos
-,GET,/cursos/:id,Busca um curso específico
-,PUT,/cursos/:id,Atualiza o curso
-,DELETE,/cursos/:id,Remove um curso
-Matrículas,POST,/matriculas,Matricula um aluno
-,GET,/matriculas,Lista matrículas cadastradas
-,PATCH,/matriculas/:id/cancelar,Cancela uma matrícula
-,PATCH,/matriculas/:id/concluir,Conclui uma matrícula
+| Recurso | Método | Rota | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Alunos** | `POST` | `/alunos` | Cadastra um novo aluno |
+| | `GET` | `/alunos` | Lista todos os alunos |
+| | `GET` | `/alunos/:id` | Busca um aluno específico |
+| | `PUT` | `/alunos/:id` | Atualiza os dados do aluno |
+| | `DELETE`| `/alunos/:id` | Remove um aluno |
+| **Cursos** | `POST` | `/cursos` | Cadastra um novo curso |
+| | `GET` | `/cursos` | Lista todos os cursos |
+| | `GET` | `/cursos/:id` | Busca um curso específico |
+| | `PUT` | `/cursos/:id` | Atualiza o curso |
+| | `DELETE`| `/cursos/:id` | Remove um curso |
+| **Matrículas** | `POST` | `/matriculas` | Matricula um aluno |
+| | `GET` | `/matriculas` | Lista matrículas cadastradas |
+| | `PATCH`| `/matriculas/:id/cancelar`| Cancela uma matrícula |
+| | `PATCH`| `/matriculas/:id/concluir`| Conclui uma matrícula |
 
 ## Configurações de Deploy no Render (Referência)
 
